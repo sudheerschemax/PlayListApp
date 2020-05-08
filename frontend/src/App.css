@@ -1,0 +1,154 @@
+@import '~antd/dist/antd.css';
+.App {
+	text-align: center;
+}
+
+.App-logo {
+	animation: App-logo-spin infinite 20s linear;
+	height: 40vmin;
+	pointer-events: none;
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.ant-layout-sider-children .logo {
+	height: 32px !important;
+	margin: 0px !important;
+	position: relative;
+	height: 32px;
+	padding-left: 5px;
+	text-align: left;
+	overflow: hidden;
+	line-height: 32px;
+	background: #001529;
+	transition: all .3s;
+}
+.ant-layout-sider-children .logo img {
+	float: left;
+	height: 32px;
+}
+.ant-layout-sider-children .logo h1 {
+	display: inline-block;
+	margin: 0;
+	color: #fff;
+	font-weight: 600;
+	font-size: 30px;
+	font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+}
+.ant-menu.ant-menu-dark.ant-menu-root {
+	text-align: left;
+	padding-top: 10px !important;
+}
+.ant-pro-global-header-trigger {
+	float: left;
+	margin-left: 20px;
+	font-size: 25px;
+	line-height: normal;
+}
+.ant-pro-global-header {
+	position: relative;
+	height: 64px;
+	box-shadow: rgba(0, 21, 41, 0.08) 0px 1px 4px;
+	padding: 0px;
+	background: rgb(255, 255, 255);
+}
+.ant-layout-sider.ant-layout-sider-dark {
+	flex: 0 0 230px !important;
+	max-width: 230px !important;
+	min-width: 200px;
+	width: 230px !important;
+}
+.content.header {
+	position: relative;
+	height: auto !important;
+	box-shadow: rgba(0, 21, 41, 0.08) 0px 1px 4px;
+	padding: 0px;
+	background: #3f7477 !important;
+	margin: -24px -24px 0px;
+	padding: 0px 10px !important;
+	font-size: 23px;
+	color: #ffffff;
+	line-height: unset;
+}
+.content.header h3 {
+	color: #fff;
+	padding:  0;
+}
+.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-collapsed {
+	flex: 0 0 80px !important;
+	max-width: 80p !important;
+	min-width: 80px;
+	width: 80px !important;
+}
+.ant-layout {
+	min-height: 100vh;
+}
+.ant-steps-navigation {
+	padding-top: 0px !important;
+}
+.ant-steps-navigation .ant-steps-item-container .ant-steps-item-title {
+	white-space: inherit !important;
+	overflow: unset !important;
+}
+.ant-layout-header,
+.ant-pro-global-header {
+	height: 32px !important;
+	line-height: unset;
+}
+.verticalLine{
+	width:2px;
+	height: 40vh;
+}
+.ant-layout-content{
+	margin: 10px !important;
+}
+.middelContent
+{
+	text-align: center;
+}
+.ant-steps.ant-steps-horizontal.ant-steps-small.ant-steps-label-horizontal.ant-steps-navigation{
+	margin-bottom: 10px !important;
+}
+ul>li.ant-menu-item {
+	padding-left: 28px !important;
+}
+.site-card-wrapper{
+	display:flex; flex-direction:row !important;
+
+}
+.inner{
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+}
+
+.songs{
+    width: 50%;
+}
+
+.playlist{
+    width: 50%;
+}
