@@ -2,12 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { PlayListService } from '../../../services/PlayListService';
 import { Card, Avatar, Pagination, Row, Col, Button, Tag, Form, Input, Table, Alert, message } from 'antd';
 import Meta from 'antd/lib/card/Meta';
+import { FilterUtil } from '../../../utils/filter-util';
 export interface CreatePlaylistProps {}
 const CreatePlaylist = (props :CreatePlaylistProps) => {
     const libraryServive = new PlayListService();
+    const filterUtil = new FilterUtil();
+
     const [songsLibrary, setsongsLibrary] = useState([]);
     const [selectedsongsLibrary, setselectedsongsLibrary] = useState([]);
     const [album, setalbum] = useState<string>('');
+    const [filtered, setfiltered] = useState([]);
+    const [status, setstatus] = useState<boolean>();
+
+
 
 
     useEffect(() => {
@@ -57,25 +64,49 @@ const CreatePlaylist = (props :CreatePlaylistProps) => {
     
 
       const  handleChange = (pagination: any, filters: any, sorter: any) =>{
+           setstatus(true);
+           console.log(filters);
+           setfiltered(filters);
 
       }
+
+
+      
      let uniqueId = 0;
+     const getFilertitle = filterUtil.getFilters(songsLibrary, 'title');
+     const getFileralbum = filterUtil.getFilters(songsLibrary, 'album');
+     const getFilerartist = filterUtil.getFilters(songsLibrary, 'artist');
 
       const columns = [
         { 
           title: 'Title',
           dataIndex: 'title',
           key: 'title',
+          filters: getFilertitle,
+          filteredValue : (status) ? (filtered) ? '' || null : null : null,
+          onFilter: (value: any, record: any) =>
+           record.title.includes(value),
+          width: 250
         },
         {
             title: 'Album',
             dataIndex: 'album',
-            key: 'album'
+            key: 'album',
+            filters: getFileralbum,
+            filteredValue : (status) ? (filtered) ? '' || null : null : null,
+            onFilter: (value: any, record: any) =>
+             record.album.includes(value),
+            width: 250
         },
         {
-            title: 'Album',
+            title: 'Artist',
             dataIndex: 'artist',
-            key: 'artist'
+            key: 'artist',
+            filters: getFilerartist,
+            filteredValue : (status) ? (filtered) ? '' || null : null : null,
+            onFilter: (value: any, record: any) =>
+             record.artist.includes(value),
+            width: 250
         },
         {
             title: 'Duration',
@@ -94,11 +125,12 @@ const CreatePlaylist = (props :CreatePlaylistProps) => {
         <Input onChange = {getPlayList}/>
         </Form.Item>
          </Form>
-         <p> Library of Songs </p>
+         <p> Library of Songs with Filters</p>
          <Table
     columns={columns} 
     dataSource={songsLibrary}
     rowSelection={rowSelection}
+    onChange = {handleChange}
     bordered 
     rowKey={(record:any) => {
         if (!record.__uniqueId) record.__uniqueId = ++uniqueId;

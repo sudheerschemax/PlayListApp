@@ -43,7 +43,6 @@ const [maxValue, setmaxValue] = useState<number>(9);
                 <br/>
                 <p>Duration : {res.duration}</p>
                 <p>Artist : {res.artist}</p>
-                <Button>Add Song to PlayList</Button>
               </Card></Col>
               </Row></div>
               )

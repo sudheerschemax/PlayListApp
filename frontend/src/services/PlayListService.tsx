@@ -24,10 +24,10 @@ async  savePlayLists(data:any) :Promise<any>{
         .then(res => {
             return res.data
 })
-} 
+}  
 
 async  getsongbyInput(datainput:any) :Promise<any>{
-    return await axios.get(this.URL + 'playlist/'+datainput)
+    return await axios.get(this.URL + 'library/'+datainput)
         .then(res => {
             return res.data
 })
